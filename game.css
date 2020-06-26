@@ -1,0 +1,73 @@
+
+body {
+  text-align: center;
+  background-color: lightblue;
+}
+
+  table, tbody, tr, td {
+    text-align: left;
+  }
+  
+  h2 {
+    color:black;
+    font-size: 20px;
+  }
+  
+  #settings {
+    position: absolute;
+     right:50px;
+     
+  }
+  
+  #next_level {
+    border:none;
+    background-color: lightseagreen;
+    color:black;
+    font-size: 16px;
+    padding:10px;
+    
+    
+  }
+  #navbar {
+    overflow: hidden;
+    background-color: midnightblue;
+    z-index: 102;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: rgb(7, 222, 250);
+    color: white;
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  @media screen and (max-width:600px) {
+    table, tbody, tr, td {
+      text-align: left;
+    }
+    body {
+      text-align: left;
+      background-color: lightblue;
+    }
+
+  }
+
+  

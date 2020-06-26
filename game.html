@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="game.css">
+    <meta charset="UTF-8">
+    <script src="game.js"></script>
+    <title>Maze trail game</title>
+  </head>
+  <body onload="onLoad();">
+    <section class="hero-section">
+      <div id="navbar">
+        <a href="#"><img src="pics/logo1.png" style="width: 40px;height: 40px;"></a>
+        <a href="index.html" onclick="colorChange()" >About Us</a>
+        <a href="index.html" onclick="colorChange()" >Events</a>
+        <a href="index.html" onclick="colorChange()" >Contacts</a>
+      </section>
+        </div>
+    <h2>The Maze Game</h2>
+    <canvas id="main"></canvas>
+    <div id="settings">
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="cols">Columns:</label></td>
+            <td><input id="cols" type="text" size="5" value="20" /></td>
+          </tr><tr>
+            <td><label for="rows">Rows:</label></td>
+            <td><input id="rows" type="text" size="5" value="20" /></td>
+          </tr><tr>
+            <td>&nbsp;</td>
+            <td><input id="next_level" type="button" value="next_level" onclick="alert('A new level');" /></td>
+          </tr>
+        </tbody>
+      </table>
+    
+      
+
+  </body>
+</html>
