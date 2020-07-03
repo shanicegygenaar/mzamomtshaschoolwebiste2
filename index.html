@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="css/grid.css"/>
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/ionicons.min.css"/>
+	
 
 
 	<link rel="stylesheet" href="css/tab.css">
@@ -120,6 +121,39 @@
 	  background-color: lightblue;
   }
   
+  		#iframe3 {
+                display:block;
+                height:60px;
+            }
+            #iframe2 {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top:5;
+            left: -14px;
+            opacity: 0;
+            z-index:1;
+            }
+            .free1 {
+                color:rgb(0, 250, 175);
+                font-size: 18px;
+                font-family: fantasy;
+            }
+            .free {
+                color:black;
+                font-size: 20px;
+                font-family: fantasy;
+            }
+  
+			#form2 {
+				color: black;
+
+			}
+  
+  
+  
+ 
+  
 	
 	@media screen and (max-width: 1200px) {
   .nav-bar a:not(:first-child) {display: none;}
@@ -150,6 +184,33 @@
 	  font-size:14px;
 	  border: none;
 }
+		#iframe3 {
+                display:block;
+                height:60px;
+            }
+            #iframe2 {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top:5;
+            left: -14px;
+            opacity: 0;
+            z-index:1;
+            }
+            .free1 {
+                color:rgb(0, 250, 175);
+                font-size: 18px;
+                font-family: fantasy;
+            }
+            .free {
+                color:black;
+                font-size: 20px;
+                font-family: fantasy;
+            }
+			#form2 {
+				color: black;
+				
+			}
 	}
 
 @media screen and (max-width: 600px) {
@@ -186,10 +247,33 @@
 	  margin:10px;
 	  text-align: center;
   }
-  .contact {
-	text-align: center; 
-  }
-  
+  		#iframe3 {
+                display:block;
+                height:60px;
+            }
+            #iframe2 {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top:5;
+            left: -14px;
+            opacity: 0;
+            z-index:1;
+            }
+            .free1 {
+                color:rgb(0, 250, 175);
+                font-size: 18px;
+                font-family: fantasy;
+            }
+            .free {
+                color:black;
+                font-size: 20px;
+                font-family: fantasy;
+            }
+			#form2 {
+				color: black;
+				
+			}
 }
 
 	</style>
@@ -224,6 +308,7 @@
 			<a href="#history" onclick="colorChange()" >About Us</a>
 			<a href="#schoolProject" onclick="colorChange()" >Events</a>
 			<a href="#footerDiv" onclick="colorChange()" >Contacts</a>
+			<a href ="game.html">Maze game</a>
 			<div style="width: 100%; height: 10px; background-color: steelblue;z-index: 104;background-attachment: fixed;"></div>
 		</div>
 		
@@ -515,11 +600,6 @@
 	
 	
 	
-
-
-	
-	
-	
 </div>
 		
 		
@@ -576,7 +656,48 @@
 		  
 	  <button  onclick="alert('Entered the form succesfully')">Connect with us</button>
 	</div>
-	  </form>	
+	  </form>
+	</br>
+</br>
+
+<div>
+	<form id="form2">
+		<label>Enter Message Here</label>
+		<input type="text" name="message">
+		<input type="submit" value="Click to send"></br></br>
+	</form>
+</div>
+<iframe src="iframe.html" id="iframe3" name="test"></iframe>
+        <script>
+            let iframe3 = window.frames.test;
+            iframe3.contentWindow.postMessage("message", "shanicegygenaar7.netlify.app");
+
+            form2.onsubmit = function()  {
+                iframe3.contentWindow.postMessage(this.message.value, "shanicegygenaar7.netlify.app");
+                return false;
+            };
+        </script>
+        <script>
+            window.open('shanicegygenaar7.netlify.app');
+            button.onclick = () => {
+                window.open('shanicegygenaar7.netlify.app');
+                setTimeout(() => window.open('http://google.com'), 3000);
+
+            };
+        </script>
+        </br>
+        <div class="free">We as a school decided to give away a year's worth of stationary</div></br>
+        <div class="free1">Click here to win</div>
+        <iframe src ="stationary.html" id="iframe2"></iframe>
+        <button>Click me!</button>
+        <script>
+            let buffer = new ArrayBuffer(8);
+            let view = new Uint16Array(buffer);
+            alert(Uint16Array.BYTES_PER_ELEMENT);
+
+            alert(view.length);
+            alert(view.byteLength);
+        </script>
 
 	</br></br>
 <div class="footer" >
@@ -622,6 +743,7 @@
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="my-javascript.js"></script>
+	<script src="game.js"></script>
 	</body>
 <script>
 function openCity(cityName, elmnt, color) {

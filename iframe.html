@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head><title>iframe</title>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+        Receiving the iframe message
+        <script>
+            window.addEventListener('message', function(event) {
+                alert('Received ' + event.data );
+            });
+        </script>
+    </body>
+</html>
