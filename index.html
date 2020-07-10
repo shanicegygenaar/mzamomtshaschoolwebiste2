@@ -640,16 +640,20 @@
 		  
 	  <label for="fname" ></label><br>
 		  
-	  <input type="text" name="fname" placeholder="First name here" onblur="myAlert()" required><br>
+	  <input type="text" name="fname" placeholder="First name here" onclick="myAlert()" required><br>
 		  
 	  <label for="lstname"></label><br>
 		  
-	  <input type="text" name="lstname" placeholder="Last name here" onblur="lastNameval()" required><br>
+	  <input type="text" name="lstname" placeholder="Last name here" onclick="lastNameval()" required><br>
 		  
 	  <label for="email"></label><br>
 		  
-	  <input type="text" name="email" placeholder="Email address" onblur="emailVal()"  required><br>
-		  
+	  <input type="text" name="email" placeholder="Email address" onclick="emailVal()"  required><br></br>
+
+	
+	<input type="file" name="images" accept="image/*"><br>
+	<label>Upload file:</label>
+	<input type="file" onchange="showFile(this)">	  
 	  <label for="textA"></label><br>
 		  
 	  <textarea  rows="6" cols="30"  placeholder="Enter your message here" name="textA" onblur="textAreaVal()" required></textarea><br></br>
@@ -663,33 +667,28 @@
 <div>
 	<form id="form2">
 		<label>Enter Message Here</label>
-		<input type="text" name="message">
-		<input type="submit" value="Click to send"></br></br>
+		<input type="text" id="message">
+		<input type="button" value="Click to send" onclick="messageEntered()"></br></br>
 	</form>
 </div>
-<iframe src="iframe.html" id="iframe3" name="test"></iframe>
-        <script>
-            let iframe3 = window.frames.test;
-            iframe3.contentWindow.postMessage("message", "shanicegygenaar7.netlify.app");
 
-            form2.onsubmit = function()  {
-                iframe3.contentWindow.postMessage(this.message.value, "shanicegygenaar7.netlify.app");
-                return false;
-            };
-        </script>
-        <script>
-            window.open('shanicegygenaar7.netlify.app');
-            button.onclick = () => {
-                window.open('shanicegygenaar7.netlify.app');
-                setTimeout(() => window.open('http://google.com'), 3000);
 
-            };
-        </script>
+        
+        
         </br>
         <div class="free">We as a school decided to give away a year's worth of stationary</div></br>
         <div class="free1">Click here to win</div>
         <iframe src ="stationary.html" id="iframe2"></iframe>
-        <button>Click me!</button>
+		<button>Click me!</button>
+		<br>
+		<!--the fetch API-->
+		
+
+
+<!--Cross origin requests CORS-->
+
+
+
         <script>
             let buffer = new ArrayBuffer(8);
             let view = new Uint16Array(buffer);
@@ -698,7 +697,42 @@
             alert(view.length);
             alert(view.byteLength);
         </script>
+<script> 
 
+form2.onsubmit = async (e) => {
+	e.preventDefault();
+	let response = await fetch('/formdata/post/user', {
+		method: "POST",
+		body: new FormData(form2)
+	});
+	let result = await response.json();
+	alert(result.message);
+};
+
+
+</script>
+<img src="" id="logo" width="200" crossorigin="use-credentials"/>
+<script>
+
+	console.log("Fetching the school logo");
+
+	catchLogo() .then(response => {
+				console.log('worked');
+	})
+
+	.catch(error => {
+		console.log("error");
+		console.error(error);
+	});
+   async function catchLogo() {
+	const response = await fetch("logo.jpg");
+	const blob = await response.blob();
+	document.getElementById('logo').src = URL.createObjectURL(blob);
+	
+}
+
+
+</script>
 	</br></br>
 <div class="footer" >
 <div style="width: 100%; height: 5px; background-color: midnightblue"></div>

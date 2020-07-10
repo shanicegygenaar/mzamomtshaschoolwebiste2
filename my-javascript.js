@@ -97,3 +97,13 @@ function changeImg1() {
 function changeImg2() {
     document.getElementById("myImg1").src = "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F10154009990506729%2F&width=500&show_text=true&height=290&appId";
 }
+
+           function messageEntered() {
+               var message = document.getElementById('message').value;
+               alert(message);
+           }
+       function showFile(input) {
+         let file = input.files[0];
+         alert(`file name: ${file.name}`);
+         alert(`last modified: ${file.lastModified}`);
+       }
