@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     </head>
     <body>
-        Receiving the iframe message
+      
+        
         <script>
-            window.addEventListener('message', function(event) {
-                alert('Received ' + event.data );
-            });
+           function messageEntered() {
+               var message = document.getElementById('message').value;
+               alert(message);
+           }
         </script>
     </body>
 </html>
